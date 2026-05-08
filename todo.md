@@ -38,3 +38,9 @@
 ## Deployment
 - [x] Create final checkpoint
 - [x] Prepare for publishing
+
+## New Features
+- [x] Replace test data with curated default resources for new users (5 articles about reading, learning, and communication)
+- [x] Add hasSeededDefaultResources flag to users table to prevent re-seeding
+- [x] Update seeding logic to only seed on first login
+- [x] Add vitest tests for seeding functionality (3 tests passing)

@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `hasSeededDefaultResources` boolean DEFAULT false NOT NULL;

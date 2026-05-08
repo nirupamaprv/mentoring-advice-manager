@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE `users` ADD `hasSeededDefaultResources` boolean DEFAULT false NOT NULL;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 26yHCMqcJ8zcACv.root --database NXUdCNEW2SqzcACSEfB49X --execute ALTER TABLE `users` ADD `hasSeededDefaultResources` boolean DEFAULT false NOT NULL;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 386
+}
