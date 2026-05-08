@@ -45,9 +45,9 @@ export default function ResourceCard({ resource, onEdit, onDelete }: ResourceCar
 
       <CardContent className="flex-1 flex flex-col gap-4">
         {/* Tags */}
-        {resource.tags.length > 0 && (
+        {resource.tags && resource.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {resource.tags.map((tag) => (
+            {resource.tags.map((tag: any) => (
               <Badge key={tag.id} variant="outline" className="text-xs">
                 {tag.name}
               </Badge>

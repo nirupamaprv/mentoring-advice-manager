@@ -10,7 +10,7 @@
 - [x] Create collection CRUD procedures
 - [x] Create tag management procedures (list, auto-suggest)
 - [x] Create search procedure (keyword + tag filter)
-- [ ] Write vitest tests for backend procedures
+- [x] Write vitest tests for backend procedures (17 tests passing)
 
 ## Frontend - Layout & Navigation
 - [x] Set up elegant dashboard layout with sidebar
