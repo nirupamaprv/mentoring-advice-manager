@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import DashboardNav from "@/components/DashboardNav";
 import ResourceForm from "@/components/ResourceForm";
@@ -14,7 +13,6 @@ import SearchPage from "./dashboard/SearchPage";
 
 export default function Dashboard() {
   const { user, loading: authLoading, isAuthenticated } = useAuth();
-  const [, setLocation] = useLocation();
   const [currentPage, setCurrentPage] = useState("resources");
   const [showForm, setShowForm] = useState(false);
   const [editingResource, setEditingResource] = useState<any>(null);
@@ -22,9 +20,10 @@ export default function Dashboard() {
   // Redirect to login if not authenticated
   useEffect(() => {
     if (!authLoading && !isAuthenticated) {
-      setLocation(getLoginUrl());
+      // Use window.location.href for cross-origin OAuth redirect, not setLocation
+      window.location.href = getLoginUrl();
     }
-  }, [authLoading, isAuthenticated, setLocation]);
+  }, [authLoading, isAuthenticated]);
 
   if (authLoading) {
     return (

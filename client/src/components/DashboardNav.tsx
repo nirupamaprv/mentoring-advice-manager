@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { BookMarked, Folder, Tag, Search, LogOut, Menu, X } from "lucide-react";
-import { useLocation } from "wouter";
-import { getLoginUrl } from "@/const";
 
 interface DashboardNavProps {
   currentPage: string;
@@ -12,12 +10,12 @@ interface DashboardNavProps {
 
 export default function DashboardNav({ currentPage, onNavigate }: DashboardNavProps) {
   const { user, logout } = useAuth();
-  const [, setLocation] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLogout = async () => {
     await logout();
-    setLocation("/");
+    // Use window.location.href for full-page redirect after logout
+    window.location.href = "/";
   };
 
   const navItems = [
